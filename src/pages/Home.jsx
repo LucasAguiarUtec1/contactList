@@ -14,6 +14,7 @@ export const Home = () => {
 
 
 	useEffect(() => {
+		console.log("Hola este es un log");
 		if (!store.isCreatedApiUser) {
 		  fetch(API_BASE_URL, {
 			method: 'POST',
