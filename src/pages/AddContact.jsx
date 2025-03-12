@@ -66,7 +66,7 @@ export const AddContact = () => {
       const newContact = {
         name,
         address: direccion,
-        phone: numero,
+        phone: numero.toString(),
         email
       }
       if (location.pathname === '/addContact') {

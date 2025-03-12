@@ -60,17 +60,17 @@ export default function storeReducer(store, action = {}) {
             contactToEdit: action.payload
           }
         case 'edit_contact' :
-          console.log('contact info' + JSON.stringify(action.payload));
-          const newInfoContact = action.payload;
-          const updatedContacts = store.contacts.map((contact) => {
-            if (contact.id === newInfoContact.id) {
-              return newInfoContact;
-            }
-            return contact;
-          });
           return {
             ...store,
-            contacts: updatedContacts 
+            contacts: store.contacts.map(contact => 
+              contact.id === action.payload.id ? {
+                ...contact,
+                name: action.payload.name,
+                address: action.payload.address,
+                phone: action.payload.phone,
+                email: action.payload.email
+              } : contact
+            )
           }
     default:
       throw Error('Unknown action.');
