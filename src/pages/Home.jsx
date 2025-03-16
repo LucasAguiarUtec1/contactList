@@ -93,8 +93,8 @@ export const Home = () => {
 		<h2 className="p-0 mb-4 mt-0">Lista de contactos</h2>
 			<ul className="list-group">
 				{store.contacts.length === 0 && <li className="list-group-item contactItem d-flex align-items-center justify-content-center text-xl-center">Aún no ha registrado contactos.</li>}
-				{store.contacts.map((contact) => (
-					<li key={contact.id} className="list-group-item contactItem d-flex align-items-center">
+				{store.contacts.map((contact, indx) => (
+					<li key={indx} className="list-group-item contactItem d-flex align-items-center">
 					<div className="d-flex align-items-center w-100">
 						<img className="perfilImage me-auto" src={tomy}/>
 						<div className="infoContact me-auto">
